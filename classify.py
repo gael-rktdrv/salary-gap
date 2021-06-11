@@ -1,7 +1,7 @@
-from collections import Counter
 import pandas as pd
 import numpy as np
 from scipy.stats import t
+from collections import Counter
 
 
 class TwoIndependentSamples:
