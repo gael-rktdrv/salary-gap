@@ -7,10 +7,10 @@ from collections import Counter
 class TwoIndependentSamples:
 
     def __init__(self, df, field, ref, cat):
-        self.df = df  # The DataFrame
-        self.cat = cat  # The category: categories of values in the field
-        self.field = field  # The field: the series of the dataframe which will be analyzed
-        self.ref = ref  # The reference: the series of the dataframe which will be used for analysis
+        self.df     = df    # The DataFrame
+        self.cat    = cat   # The category: categories of values in the field
+        self.field  = field # The field: the series of the dataframe which will be analyzed
+        self.ref    = ref   # The reference: the series of the dataframe which will be used for analysis
 
     def get_count(self):
         """

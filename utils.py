@@ -1,5 +1,5 @@
 import pandas as pd
-import classify
+from classify import SplitDataFrame, TwoIndependentSamples
 
 
 # import seaborn as sns
@@ -60,6 +60,7 @@ def parameters_input(df):
         print(f"\t{i}")
 
     cat = input("\nType the category of reference: ")
+    
     return df, field, ref, cat
 
 
@@ -92,12 +93,12 @@ def main_ops():
     if direction == "entire":
         pass
     else:
-        df = classify.SplitDataFrame(df, column, limit, direction)
+        df = SplitDataFrame(df, column, limit, direction)
         df = df.return_dataframe()
 
     print(type(df))
 
-    res = classify.TwoIndependentSamples(df, field, ref, cat)  # Assigning them to the calls Classify
+    res = TwoIndependentSamples(df, field, ref, cat)  # Assigning them to the calls Classify
     print(f"\nSummary of {field}: \n{res.get_count()}")  # Data Summary
     d0 = get_hypothesis()  # Get the null hypothesis value
     overall = res.compare_categories()
